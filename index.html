@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chirag – Developer &amp; personal hub</title>
+  <meta name="description" content="Chirag's portfolio, links and private workspace.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="scene" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <a class="brand" href="#top">Chirag</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a><a href="#connect">Connect</a><a href="#workspace">Workspace</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>One place for my work, my links and my files.</h1>
+      <p class="lead">I’m Chirag, a developer. Browse what I’ve built, find me online, or unlock my private workspace.</p>
+      <a class="button" href="#work">See my projects</a>
+      <a class="ghost" href="#workspace">Open workspace</a>
+    </section>
+
+    <section id="work" class="block">
+      <h2>Selected projects</h2>
+      <ul class="projects">
+        <li><div><h3><a href="#">Project one</a></h3><p>What it does, who it is for, and what you built.</p></div><p class="stack">HTML, CSS, JavaScript</p></li>
+        <li><div><h3><a href="#">Project two</a></h3><p>The problem you solved and the result.</p></div><p class="stack">Python, Flask</p></li>
+        <li><div><h3><a href="#">Project three</a></h3><p>Link the live site or the GitHub repo.</p></div><p class="stack">React, Node.js</p></li>
+      </ul>
+    </section>
+
+    <section id="connect" class="block">
+      <h2>Connect</h2>
+      <p>Email <a href="mailto:you@example.com">you@example.com</a> or find me here:</p>
+      <p class="socials">
+        <a href="https://github.com/your-username">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-username">LinkedIn</a>
+        <a href="https://x.com/your-username">X</a>
+        <a href="https://instagram.com/your-username">Instagram</a>
+      </p>
+    </section>
+
+    <section id="workspace" class="block">
+      <h2>Private workspace</h2>
+
+      <div id="gate" class="panel">
+        <form id="gate-form">
+          <label for="email">Sign in to your workspace</label>
+          <div class="row">
+            <input id="email" type="email" placeholder="Email" required autocomplete="username">
+            <input id="pass" type="password" placeholder="Password" required autocomplete="current-password">
+            <button class="button" type="submit" id="gate-btn">Sign in</button>
+          </div>
+          <p id="gate-msg" role="status"></p>
+        </form>
+        <p class="note">Your links and files are stored privately in your own Supabase account and can only be opened after you sign in.</p>
+      </div>
+
+      <div id="space" class="panel" hidden>
+        <div class="space-head">
+          <div class="tabs" role="tablist">
+            <button role="tab" aria-selected="true" data-tab="links">Links</button>
+            <button role="tab" aria-selected="false" data-tab="files">Files</button>
+          </div>
+          <button class="ghost" id="lock">Sign out</button>
+        </div>
+
+        <div id="tab-links">
+          <form id="link-form" class="row">
+            <input id="l-title" placeholder="Title" required>
+            <input id="l-url" type="url" placeholder="https://…" required>
+            <button class="button" type="submit">Add link</button>
+          </form>
+          <ul id="link-list" class="items"></ul>
+        </div>
+
+        <div id="tab-files" hidden>
+          <label class="drop" id="drop">
+            <input id="file-in" type="file" multiple>
+            <span>Drop files here or click to upload</span>
+          </label>
+          <ul id="file-list" class="items"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>© <span id="year">2026</span> Chirag</p></footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+</body>
+</html>
