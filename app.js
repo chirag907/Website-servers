@@ -63,7 +63,7 @@ $('#gate-form').addEventListener('submit',async e=>{
   e.preventDefault();if(!sb)return;msg.textContent='';
   const {data,error}=await sb.auth.signInWithPassword({email:$('#email').value.trim(),password:$('#pass').value});
   $('#pass').value='';
-  if(error){msg.textContent='Sign-in failed. Check your email and password.';return}
+  if(error){msg.textContent='Sign-in failed: '+error.message;return}
   show(data.user);
 });
 $('#lock').addEventListener('click',()=>sb&&sb.auth.signOut());
