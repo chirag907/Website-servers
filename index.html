@@ -2,102 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chirag – Developer &amp; personal hub</title>
-  <meta name="description" content="Chirag's portfolio, links and private workspace.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chirag Lakhera – Developer</title>
+  <meta name="description" content="Chirag Lakhera: developer. Projects, links and a private workspace.">
+  <meta name="theme-color" content="#0d1018">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.className='js'</script>
+  <noscript><style>#loader{display:none}</style></noscript>
 </head>
 <body>
+  <div id="loader" aria-hidden="true"><span><span id="count">0</span>%</span></div>
   <canvas id="scene" aria-hidden="true"></canvas>
 
   <header class="top">
-    <a class="brand" href="#top">Chirag</a>
-    <nav aria-label="Main">
-      <a href="#work">Work</a><a href="#connect">Connect</a><a href="#workspace">Workspace</a>
-    </nav>
+    <a class="brand" href="#top">Chirag Lakhera</a>
+    <nav aria-label="Main"><a href="#explore">Explore</a><a href="#work">Work</a><a href="#connect">Connect</a><a href="workspace.html" target="_blank" rel="noopener">Workspace</a></nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <h1>One place for my work, my links and my files.</h1>
-      <p class="lead">I’m Chirag, a developer. Browse what I’ve built, find me online, or unlock my private workspace.</p>
-      <a class="button" href="#work">See my projects</a>
-      <a class="ghost" href="#workspace">Open workspace</a>
+      <h1 aria-label="Chirag Lakhera"><span>C</span><span>H</span><span>I</span><span>R</span><span>A</span><span>G</span></h1>
+      <p class="tag">Chirag Lakhera: code, products and the small details in between.</p>
     </section>
 
+    <section id="explore" class="explore" aria-label="Interactive 3D gallery">
+      <p class="hint">Drag to explore. Click to open.</p>
+      <p class="count"><b id="idx">01</b> / <span id="tot">20</span></p>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div><span>Web apps</span><span>Interfaces</span><span>Python</span><span>3D on the web</span><span>Automation</span><span>Web apps</span><span>Interfaces</span><span>Python</span><span>3D on the web</span><span>Automation</span></div></div>
+
     <section id="work" class="block">
-      <h2>Selected projects</h2>
+      <h2>Selected work</h2>
       <ul class="projects">
-        <li><div><h3><a href="#">Project one</a></h3><p>What it does, who it is for, and what you built.</p></div><p class="stack">HTML, CSS, JavaScript</p></li>
-        <li><div><h3><a href="#">Project two</a></h3><p>The problem you solved and the result.</p></div><p class="stack">Python, Flask</p></li>
-        <li><div><h3><a href="#">Project three</a></h3><p>Link the live site or the GitHub repo.</p></div><p class="stack">React, Node.js</p></li>
+        <li><a href="#"><span class="t">Project one</span><span class="d">What it does and who it is for.</span><span class="s">JavaScript</span></a></li>
+        <li><a href="#"><span class="t">Project two</span><span class="d">The problem you solved and the result.</span><span class="s">Python</span></a></li>
+        <li><a href="#"><span class="t">Project three</span><span class="d">Link the live site or the repo.</span><span class="s">React</span></a></li>
       </ul>
     </section>
 
-    <section id="connect" class="block">
-      <h2>Connect</h2>
-      <p>Email <a href="mailto:you@example.com">you@example.com</a> or find me here:</p>
-      <p class="socials">
-        <a href="https://github.com/your-username">GitHub</a>
-        <a href="https://www.linkedin.com/in/your-username">LinkedIn</a>
-        <a href="https://x.com/your-username">X</a>
-        <a href="https://instagram.com/your-username">Instagram</a>
-      </p>
+    <section id="about" class="block statement">
+      <p>I’m Chirag Lakhera. I like turning rough ideas into fast, clear, working products, and keeping everything I make in one place.</p>
     </section>
 
-    <section id="workspace" class="block">
-      <h2>Private workspace</h2>
+    <section class="block cta">
+      <a class="big" href="workspace.html" target="_blank" rel="noopener">Open my workspace</a>
+      <p>A private canvas for my files and links. Sign-in required.</p>
+    </section>
 
-      <div id="gate" class="panel">
-        <form id="gate-form">
-          <label for="email">Sign in to your workspace</label>
-          <div class="row">
-            <input id="email" type="email" placeholder="Email" required autocomplete="username">
-            <input id="pass" type="password" placeholder="Password" required autocomplete="current-password">
-            <button class="button" type="submit" id="gate-btn">Sign in</button>
-          </div>
-          <p id="gate-msg" role="status"></p>
-        </form>
-        <p class="note">Your links and files are stored privately in your own Supabase account and can only be opened after you sign in.</p>
-      </div>
-
-      <div id="space" class="panel" hidden>
-        <div class="space-head">
-          <div class="tabs" role="tablist">
-            <button role="tab" aria-selected="true" data-tab="links">Links</button>
-            <button role="tab" aria-selected="false" data-tab="files">Files</button>
-          </div>
-          <button class="ghost" id="lock">Sign out</button>
-        </div>
-
-        <div id="tab-links">
-          <form id="link-form" class="row">
-            <input id="l-title" placeholder="Title" required>
-            <input id="l-url" type="url" placeholder="https://…" required>
-            <button class="button" type="submit">Add link</button>
-          </form>
-          <ul id="link-list" class="items"></ul>
-        </div>
-
-        <div id="tab-files" hidden>
-          <label class="drop" id="drop">
-            <input id="file-in" type="file" multiple>
-            <span>Drop files here or click to upload</span>
-          </label>
-          <ul id="file-list" class="items"></ul>
-        </div>
-      </div>
+    <section id="connect" class="block">
+      <a class="big" href="mailto:chiraglakhera3@gmail.com">chiraglakhera3@gmail.com</a>
+      <p class="socials"><a href="https://github.com/your-username">GitHub</a><a href="https://www.linkedin.com/in/your-username">LinkedIn</a><a href="https://x.com/your-username">X</a><a href="https://instagram.com/your-username">Instagram</a></p>
     </section>
   </main>
+  <div id="lb" hidden><img alt=""><button id="lb-x" type="button">Close</button></div>
 
-  <footer><p>© <span id="year">2026</span> Chirag</p></footer>
-
+    <footer><p>© <span id="year">2026</span> Chirag Lakhera</p></footer>
   <script defer src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
-  <script defer src="config.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="site.js"></script>
 </body>
 </html>
